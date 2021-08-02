@@ -1,7 +1,7 @@
 import { ProcessEventsHandler, ProcessErrorHandler } from "@azure/event-hubs";
 import axios from "axios";
 import env from "./env";
-import logger from "./logger";
+// import logger from "./logger";
 import { IEventMessage } from "./models/IEventMessage";
 import { MessageTypes } from "./utils/MessageType";
 import MeterValueService from "./services/meter.value.service";

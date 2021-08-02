@@ -4,7 +4,7 @@ import {
   StorageSharedKeyCredential,
 } from "@azure/storage-blob";
 import { BlobCheckpointStore } from "@azure/eventhubs-checkpointstore-blob";
-import logger from "./logger";
+// import logger from "./logger";
 import env from "./env";
 import { processEvent, processError } from "./app";
 import { delay } from "@azure/event-processor-host";
@@ -18,7 +18,7 @@ const consumerGroup = env.EVENT_HUB_CONSUMER_GROUP || "";
 
 const main = async () => {
   try {
-    logger.info("IoT Hub Quickstarts - Read device to cloud messages.");
+    // logger.info("IoT Hub Quickstarts - Read device to cloud messages.");
 
     // const storageCredential = new StorageSharedKeyCredential(
     //   storageAccountName,
@@ -58,7 +58,7 @@ const main = async () => {
    
   } catch (ex) {
     console.log("### ERROR ###",ex);
-    logger.error(ex);
+    // logger.error(ex);
   }
 };
 

@@ -1,7 +1,7 @@
 import { BOAmbassador } from '../ambassadors/bo.ambassador';
 import _ from 'lodash';
 import { StopTransactionReason } from '../utils/MessageType';
-import logger from '../logger';
+// import logger from '../logger';
 
 class StopTransactionService {
     private boAmbassador: BOAmbassador;
@@ -18,7 +18,7 @@ class StopTransactionService {
         try {
             await this.boAmbassador.updateEnergyByOrderId(orderId, energy, unit)
         } catch (error) {
-            logger.error(`Update energy order: ${orderId} failure: `, `${error}`);
+            // logger.error(`Update energy order: ${orderId} failure: `, `${error}`);
         }
     }
 
@@ -26,7 +26,7 @@ class StopTransactionService {
         try {
             await this.boAmbassador.cardCheckout(orderId, isEmergencyStop)
         } catch (error) {
-            logger.error(`Cannot checkout order: ${orderId}`, `${error}`);
+            // logger.error(`Cannot checkout order: ${orderId}`, `${error}`);
         }
     }
 
@@ -35,7 +35,7 @@ class StopTransactionService {
         let isEmergencyStop = payload.reason === StopTransactionReason.EmergencyStop
 
         if (!orderId) {
-            logger.info('Error: orderId not found')
+            // logger.info('Error: orderId not found')
             return
         }
 
