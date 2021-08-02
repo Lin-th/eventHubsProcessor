@@ -1,0 +1,33 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- pipeline
+- master
+- release/*
+
+resources:
+  repositories:
+    - repository: templates
+      type: git      
+      name: "it.sd.dev/devops-pipeline-template-tsoa-api"
+      ref: refs/heads/release/3.0
+      
+extends:
+  template: common-pipeline.yaml@templates
+  parameters:
+    containerRegistry: bpnsgpdcontainerregistry
+    repository: evc-event-api
+    service: evc-event-api
+    component: api
+    skipLint: true
+    skipUnitTest: true
+    skipEnvCheck: false
+    skipSonarCloud: true
+    skipNpmAudit: true
+    ingressType: internal
+    ingressPathPrefix: evc-event-api
+    certSecretName: banpunext-co-th-tls    
+    useCustomDeploymentTemplate: true

@@ -1,0 +1,41 @@
+{
+  "name": "evcharger-event-api",
+  "version": "1.0.0",
+  "description": "This project will pull event message of charger from IoT Hub every 10 second and handle each of message of charger.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r dotenv/config ./dist/server2.js",
+    "build": "node node_modules/typescript/bin/tsc",
+    "tsoa:gen": "echo \"This is a poller so no need tsoa:gen!\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://banpudev@dev.azure.com/banpudev/EV%20Charger/_git/evcharger-event-api"
+  },
+  "author": "Banpu IT",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/event-hubs": "^5.5.0",
+    "@azure/event-processor-host": "2.1.1",
+    "@azure/eventhubs-checkpointstore-blob": "latest",
+    "@azure/storage-blob": "^12.4.1",
+    "@banpudev/banpu-batch": "1.0.8",
+    "@banpudev/banpu-framework": "1.0.3547",
+    "@sentry/node": "6.10.0",
+    "@sentry/tracing": "6.10.0",
+    "adal-node": "0.2.1",
+    "applicationinsights": "1.8.3",
+    "axios": "0.21.1",
+    "azure-iot-device-mqtt": "1.15.4",
+    "dotenv": "8.2.0",
+    "excel4node": "1.7.2",
+    "lodash": "4.17.21",
+    "winston": "3.3.3",
+    "winston-azure-application-insights": "2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.27",
+    "typescript": "^3.9.7"
+  }
+}
