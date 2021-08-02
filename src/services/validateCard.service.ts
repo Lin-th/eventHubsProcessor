@@ -1,6 +1,6 @@
 import { BOAmbassador } from '../ambassadors/bo.ambassador';
 import _ from 'lodash';
-import logger from '../logger';
+// import logger from '../logger';
 
 class StartTransactionService {
     private boAmbassador: BOAmbassador;
@@ -19,15 +19,15 @@ class StartTransactionService {
         let deviceId = systemProperties['iothub-connection-device-id']
         
         if (!chargerSerailNumber) {
-            logger.info('Error: chargerSerailNumber not found')
+            // logger.info('Error: chargerSerailNumber not found')
             return
         }
         if (!idTag) {
-            logger.info('Error: idTag not found')
+            // logger.info('Error: idTag not found')
             return
         }
         if (!deviceId) {
-            logger.info('Error: deviceId not found')
+            // logger.info('Error: deviceId not found')
             return
         }
         
@@ -37,7 +37,7 @@ class StartTransactionService {
         try {
             await this.boAmbassador.cardWalkin(chargerSerailNumber, idTag, deviceId)
         } catch (error) {
-            logger.error(`Cannot cardWalkin chargerSerailNumber: ${chargerSerailNumber}`, `${error}`);
+            // logger.error(`Cannot cardWalkin chargerSerailNumber: ${chargerSerailNumber}`, `${error}`);
         }
     }
 
