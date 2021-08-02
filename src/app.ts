@@ -20,7 +20,7 @@ let i = 0;
 
 const processError: ProcessErrorHandler = async (err: any): Promise<void> => {
   console.log("ProcessError: ", err.message);
-  logger.error(err.message);
+  // logger.error(err.message);
 };
 const processEvent: ProcessEventsHandler = async (
   messages: any,
@@ -30,7 +30,7 @@ const processEvent: ProcessEventsHandler = async (
     return;
   }
   for (const message of messages) {
-    logger.info(`Telemetry received: ${JSON.stringify(message.body)}`);
+    // logger.info(`Telemetry received: ${JSON.stringify(message.body)}`);
     console.log("========");
     console.log("On Message =>", Math.round(memoryUsage().heapUsed / 1024 / 1024 * 100) / 100 ,"MB" );
     saveMessage(message);
@@ -114,7 +114,7 @@ const saveMessage = (message: any) => {
       }
     }
   } catch (error) {
-    logger.error(error);
+    // logger.error(error);
   }
 };
 
