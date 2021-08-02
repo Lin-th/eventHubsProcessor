@@ -26,13 +26,13 @@ async function main() {
 
   const subscription = client.subscribe({
     processEvents: async (events, context) => {
-      Sentry.captureMessage("Recive Message");
       if (events.length === 0) {
         return;
       }
-      console.log("On Message =>", Math.round(memoryUsage().heapUsed / 1024 / 1024 * 100) / 100 ,"MB" );
+     
       for (const iterator of events) {
-        Sentry.captureMessage("Swich Message");
+        console.log("On Message =>", Math.round(memoryUsage().heapUsed / 1024 / 1024 * 100) / 100 ,"MB" );
+        Sentry.captureMessage("Swich Message",iterator.data);
         switch (iterator.data.OcppMethod) {
           case MessageTypes.MeterValues:
             MeterValueService.init(iterator.data);

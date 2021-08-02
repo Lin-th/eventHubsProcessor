@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.onError = exports.onMessage = void 0;
 const env_1 = __importDefault(require("./env"));
-const logger_1 = __importDefault(require("./logger"));
 const MessageType_1 = require("./utils/MessageType");
 const meter_value_service_1 = __importDefault(require("./services/meter.value.service"));
 const stopTransaction_service_1 = __importDefault(require("./services/stopTransaction.service"));
@@ -59,7 +58,7 @@ const saveMessage = (message) => {
         }
     }
     catch (error) {
-        logger_1.default.error(error);
+        // logger.error(error);
     }
 };
 let count = 0;

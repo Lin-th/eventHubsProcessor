@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.processError = exports.processEvent = void 0;
 const env_1 = __importDefault(require("./env"));
-const logger_1 = __importDefault(require("./logger"));
 const MessageType_1 = require("./utils/MessageType");
 const meter_value_service_1 = __importDefault(require("./services/meter.value.service"));
 const stopTransaction_service_1 = __importDefault(require("./services/stopTransaction.service"));
@@ -20,7 +19,7 @@ var ws = wb.addWorksheet("Sheet 1");
 let i = 0;
 const processError = async (err) => {
     console.log("ProcessError: ", err.message);
-    logger_1.default.error(err.message);
+    // logger.error(err.message);
 };
 exports.processError = processError;
 const processEvent = async (messages, context) => {
@@ -28,7 +27,7 @@ const processEvent = async (messages, context) => {
         return;
     }
     for (const message of messages) {
-        logger_1.default.info(`Telemetry received: ${JSON.stringify(message.body)}`);
+        // logger.info(`Telemetry received: ${JSON.stringify(message.body)}`);
         console.log("========");
         console.log("On Message =>", Math.round(process_1.memoryUsage().heapUsed / 1024 / 1024 * 100) / 100, "MB");
         saveMessage(message);
@@ -97,7 +96,7 @@ const saveMessage = (message) => {
         }
     }
     catch (error) {
-        logger_1.default.error(error);
+        // logger.error(error);
     }
 };
 //# sourceMappingURL=app.js.map
