@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const event_hubs_1 = require("@azure/event-hubs");
-const logger_1 = __importDefault(require("./logger"));
+// import logger from "./logger";
 const env_1 = __importDefault(require("./env"));
 const app_1 = require("./app");
 const connectionString = env_1.default.CONNECTIONSTRING || "";
@@ -15,7 +15,7 @@ const storageContainerUrl = env_1.default.STORAGE_CONTAINER_URL || "";
 const consumerGroup = env_1.default.EVENT_HUB_CONSUMER_GROUP || "";
 const main = async () => {
     try {
-        logger_1.default.info("IoT Hub Quickstarts - Read device to cloud messages.");
+        // logger.info("IoT Hub Quickstarts - Read device to cloud messages.");
         // const storageCredential = new StorageSharedKeyCredential(
         //   storageAccountName,
         //   storageAccountKey
@@ -42,7 +42,7 @@ const main = async () => {
     }
     catch (ex) {
         console.log("### ERROR ###", ex);
-        logger_1.default.error(ex);
+        // logger.error(ex);
     }
 };
 main().catch((error) => {
