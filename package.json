@@ -20,8 +20,6 @@
     "@azure/event-processor-host": "2.1.1",
     "@azure/eventhubs-checkpointstore-blob": "latest",
     "@azure/storage-blob": "^12.4.1",
-    "@banpudev/banpu-batch": "1.0.8",
-    "@banpudev/banpu-framework": "1.0.3547",
     "@sentry/node": "6.10.0",
     "@sentry/tracing": "6.10.0",
     "adal-node": "0.2.1",
